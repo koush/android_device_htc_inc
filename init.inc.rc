@@ -1,0 +1,183 @@
+on init
+# eMMC related 
+    export PHONE_STORAGE /emmc
+
+    #
+    # START from umount/re-mount data
+    #
+    umount /data
+    mount yaffs2:ext3 sel?mtd@userdata:mmcblk0p1 /data nosuid noatime nodiratime
+    exec /system/bin/e2fsck -p /dev/block/mmcblk0p1
+    chown system system /data
+    chmod 0771 /data
+
+    # Create dump dir and collect dumps.
+    # Do this before we mount cache so eventually we can use cache for
+    # storing dumps on platforms which do not have a dedicated dump partition.
+   
+    mkdir /data/dontpanic
+    chown root log /data/dontpanic
+    chmod 0750 /data/dontpanic
+
+    # Collect apanic data, free resources and re-arm trigger
+    copy /proc/apanic_console /data/dontpanic/apanic_console
+    chown root log /data/dontpanic/apanic_console
+    chmod 0640 /data/dontpanic/apanic_console
+
+    copy /proc/apanic_threads /data/dontpanic/apanic_threads
+    chown root log /data/dontpanic/apanic_threads
+    chmod 0640 /data/dontpanic/apanic_threads
+
+# create basic filesystem structure
+    mkdir /data/misc 01771 system misc
+    mkdir /data/misc/bluetoothd 0770 bluetooth bluetooth
+    mkdir /data/misc/keystore 0700 keystore keystore
+    mkdir /data/misc/vpn 0770 system system
+    mkdir /data/misc/vpn/profiles 0770 system system
+    # give system access to wpa_supplicant.conf for backup and restore
+    mkdir /data/misc/wifi 0770 wifi wifi
+    chmod 0770 /data/misc/wifi
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+    mkdir /data/local 0771 shell shell
+    mkdir /data/local/tmp 0771 shell shell
+    mkdir /data/data 0771 system system
+    mkdir /data/app-private 0771 system system
+    mkdir /data/app 0771 system system
+    chmod 0771 /data/app
+    mkdir /data/property 0700 root root
+    # DRMv1 rights storage
+    symlink /data/local /data/drm
+    mkdir /data/local/rights 0777 shell shell
+    chown shell shell /data/drm
+    write /data/drm/rights/mid.txt 0
+    chmod 0777 /data/drm/rights/mid.txt
+
+
+    # create dalvik-cache and double-check the perms
+    mkdir /data/dalvik-cache 0771 system system
+    chown system system /data/dalvik-cache
+    chmod 0771 /data/dalvik-cache
+
+    # create the lost+found directories, so as to enforce our permissions
+    mkdir /data/lost+found 0770
+
+    # double check the perms, in case lost+found already exists, and set owner
+    chown root root /data/lost+found
+    chmod 0770 /data/lost+found
+
+    # create DRM directories
+    mkdir /data/DxDrm
+    mkdir /data/DxDrm/fuse
+    chmod 0777 /data/DxDrm
+
+    # change the mode for dmdata
+    chmod 0777 /data/local/dmdata
+    #
+    # END umount/re-mount data
+    #
+
+    mount rootfs rootfs / remount
+    mkdir /emmc 0000 system system
+    mount rootfs rootfs / ro remount
+    mount yaffs2 mtd@datadata /data/data nosuid nodev
+    chown system system /data/data
+    chmod 0771 /data/data
+
+    #
+    # START umount/re-mount cache
+    #
+    umount /cache
+    mount yaffs2:ext3 sel?mtd@cache:mmcblk0p2 /cache nosuid nodev noatime nodiratime
+    chown system cache /cache
+    chmod 0770 /cache
+
+    # This may have been created by the recovery system with odd permissions
+    chown system system /cache/recovery
+    chmod 0770 /cache/recovery
+    mkdir /cache/lost+found 0770
+    chown root root /cache/lost+found
+    chmod 0770 /cache/lost+found
+    #
+    # END umount/re-mount data
+    #
+
+on boot
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chown system system /sys/module/serial/parameters/modem_enabled
+    chown system system /dev/ttyHSUSB0
+    chown system system /dev/ttySA0
+    chown system system /dev/smd9
+    chown radio radio /sys/module/msm_flashlight/parameters/phone_status
+    # Enable low memory killer to check file pages
+    write /sys/module/lowmemorykiller/parameters/minfile 0,0,0,5120,5632,6144
+    write /sys/module/lowmemorykiller/parameters/check_filepages 1
+
+service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
+    -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
+#   we will start as root and wpa_supplicant will switch to user wifi
+#   after setting up the capabilities required for WEXT
+#   user wifi
+#   group wifi inet keystore
+    socket wpa_eth0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd /system/bin/dhcpcd -ABKL eth0
+    disabled
+    oneshot
+
+#service hciattach /system/bin/brcm_patchram_plus --enable_hci --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
+#    user bluetooth
+#    group bluetooth net_bt_admin
+#    disabled
+
+# Make sure we startup btld before hcid
+# Set target address to emulator host loopback IF
+# Limit baudrate to 460800 to ensure reliable uart operation 
+#service btld /system/bin/logwrapper /system/bin/btld -hwtun 10.0.2.2 -hb 460800 3000000 -lpm 1
+service btld /system/bin/logwrapper /system/bin/btld -lpm 1 -hb 3000000
+    user root
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service udhcpd /system/bin/udhcpd
+	disabled
+	oneshot
+
+service netsharing_on /system/bin/netsharing net on
+	disabled
+	oneshot
+
+service netsharing_off /system/bin/netsharing net off
+	disabled
+	oneshot
+	
+service modem /system/xbin/wireless_modem
+    user system
+    group system radio
+    disabled
+
+on property:service.modem.enable=1
+    start modem
+
+on property:service.modem.enable=0
+    stop modem
+
+# compass/accelerometer daemon
+service akmd /system/bin/akmd
+    user compass
+    group compass misc input
+
+service dmagent /system/bin/dmagent -N -P19 -VSY
+    socket dmagent stream 660 root radio
+    user root
+    group radio cache inet misc
+

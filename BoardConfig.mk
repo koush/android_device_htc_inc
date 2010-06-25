@@ -26,52 +26,51 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/motorola/sholes/BoardConfigVendor.mk
+-include vendor/htc/inc/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
 
-TARGET_BOARD_PLATFORM := omap3
-#TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+TARGET_BOARD_PLATFORM := qsd8k
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a8
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8
 
-TARGET_BOOTLOADER_BOARD_NAME := sholes
+TARGET_BOOTLOADER_BOARD_NAME := inc
 
 # Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libCustomWifi
-BOARD_WLAN_DEVICE           := tiwlan0
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/tiwlan_drv.ko"
-BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/wilink_6_1
-WIFI_DRIVER_MODULE_ARG      := ""
-WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
-WIFI_FIRMWARE_LOADER        := "wlan_loader"
+BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+WPA_SUPPLICANT_VERSION      := VER_0_6_X
+BOARD_WLAN_DEVICE           := bcm4329
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
+WIFI_DRIVER_FW_STA_PATH     := "/system/etc/firmware/fw_bcm4329.bin"
+#WIFI_DRIVER_FW_AP_PATH      := "/system/etc/firmware/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_MODULE_NAME     := "bcm4329"
 
 BOARD_USES_GENERIC_AUDIO := false
 
-BOARD_KERNEL_CMDLINE := console=ttyS2,115200n8 rw mem=244M@0x80C00000 init=/init ip=off brdrev=P3A_CDMA mtdparts=omap2-nand.0:640k@128k(mbm),384k@1408k(cdt),384k@3328k(lbl),384k@6272k(misc),3584k(boot),4608k(recovery),143744k(system),94848k(cache),268032k(userdata),2m(kpanic)
-BOARD_KERNEL_BASE := 0x10000000
+BOARD_KERNEL_CMDLINE := no_console_suspend=1
+BOARD_KERNEL_BASE := 0x20000000
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
-BOARD_EGL_CFG := device/motorola/sholes/egl.cfg
+BOARD_VENDOR_QCOM_AMSS_VERSION := 3200
 
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00380000
+BOARD_VENDOR_USE_AKMD := akm8973
+
+BOARD_EGL_CFG := device/htc/inc/egl.cfg
+
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00280000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00480000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x08c60000   # limited so we enforce room to grow
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x0f800000   # limited so we enforce room to grow
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x09500000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_RECOVERY_UI_LIB := librecovery_ui_sholes librecovery_ui_generic
+TARGET_RECOVERY_UI_LIB := librecovery_ui_inc librecovery_ui_htc
 
-TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_generic
+TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_htc
 
-#TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
-
-TARGET_PROVIDES_INIT_RC := true
-USE_SHOLES_PROPERTY := true
+TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common

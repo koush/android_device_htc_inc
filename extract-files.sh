@@ -14,127 +14,203 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE=sholes
+DEVICE=inc
 
-mkdir -p ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libmoto_gps.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libaudio.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libaudiopolicy.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libcamera.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libril_rds.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libnmea.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/egl/libEGL_POWERVR_SGX530_121.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/egl/libGLESv1_CM_POWERVR_SGX530_121.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/egl/libGLESv2_POWERVR_SGX530_121.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/hw/gralloc.omap3.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/hw/lights.sholes.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/hw/sensors.sholes.so ../../../vendor/motorola/$DEVICE/proprietary
+mkdir -p ../../../vendor/htc/$DEVICE/proprietary
+
+adb pull /system/bin/PPST ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/akmd ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/aparse ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/awb_camera ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/bma150_usr ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/bootcomplete ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/btld ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/cam_ins_spmo ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/debug_tool ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/dmagent ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/e2fsck ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/e2fsck_recvy ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/fbtool ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/htclogkernel ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/ip ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/keypress ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/lsc_camera ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/mke2fs ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/mke2fs_recvy ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/mm-aenc-omxaac-test ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/mm-aenc-omxqcelp13-test ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/mm-venc-omx-test ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/mmcamera_test ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/monitorMTD ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/mscompress ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/netsharing ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/resize2fs ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/resize2fs_recvy ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/rsync ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/ser2net ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/setmic ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/shutdown ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/snd ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/snd8k ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/sound8k ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/spkamp ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/tune2fs ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/udhcpd ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/uevent ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/vptest ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/wifitools ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/1_00_sample.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/CID/cidProfile1.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/CID/cidProfile2.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/CID/default.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/COMMON.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/MNS/default.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/cid_map.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/default.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/mccmnc.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/mns_map.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/resource/CCInfo.txt ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/resource/HTC_Quietly_Brilliant.gif ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/resource/VZW.gif ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/resource/preInstall.opml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/resource/preset.kmz ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/resource/resource ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/customize/resource/ringtone_01.wma ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/01_qcomm_omx.cfg ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/AdieHWCodecSetting.csv ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/AudioBTID.csv ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/TPA2018.csv ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/WPDB.zip ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/agps_rm ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/bluez/audio.conf ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/bluez/input.conf ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/bluez/main.conf ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/bookmarks.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/BCM4329B1_002.002.023.0298.0303.hcd ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/Incredible_C_20100310_VZW_Neo_324016_v4_PMIC.acdb ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/Incredible_C_20100319_VZW_Neo_324016_v5_VZW.acdb ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/Incredible_C_20100319_VZW_Neo_324016_v8_default.acdb ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/default.acdb ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/default_PMIC.acdb ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/default_VZW.acdb ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/fw_bcm4329.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/yamato_pfp.fw ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/yamato_pm4.fw ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/iproute2/rt_tables ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/permissions/android.hardware.camera.autofocus.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/permissions/android.software.live_wallpaper.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/permissions/com.cequint.platform.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/permissions/com.google.android.datamessaging.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/permissions/com.google.android.gtalkservice.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/permissions/com.google.android.maps.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/permissions/com.htc.framework.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/permissions/required_hardware.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/pvasflocal.cfg ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/ser2net.conf ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/timezones.db ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/voVidDec.dat ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/vo_omx_core.cfg ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/voicemail-conf.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/vold.conf ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/vomeOne.cfg ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/framework/com.cequint.platform.jar ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/framework/com.google.android.gtalkservice.jar ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/framework/com.google.android.maps.jar ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/framework/com.htc.android.easopen.jar ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/framework/com.htc.android.pimlib.jar ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/framework/com.htc.framework.jar ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/framework/com.scalado.util.ScaladoUtil.jar ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/hw/sensors.inc.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libAudioTrimmer.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libDMCmd.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libObexJniWrapper.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libOlaBase.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libOmxAacEnc.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libOmxCore.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libOmxQcelp13Enc.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libOmxVidEnc.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libTVOUT.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libaes.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libalbum_util.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libaudiopolicygeneric.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchecksum.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libcurl.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libdm.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libext2_blkid.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libext2_com_err.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libext2_e2p.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libext2_profile.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libext2_uuid.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libext2fs.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libflashlite.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libflashsnddec.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libflsaplayerlib.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libgps.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libgsl.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libgtalk_jni.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libhtc_acoustic.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libhtc_ril.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libhtcbitmapfactory.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libiconv.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libicule.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libiculx.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libmm-omxcore.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libmode10.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libmode10Graphics.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libmode10_wallpapers.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libmscompress.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/liboemcamera.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libomx_vo_omx_core.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libomx_wmadec_sharedlibrary.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libomx_wmvdec_sharedlibrary.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libon2.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libopencorehw.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libopenobex.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libpdfreader.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libpvasfcommon.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libpvasflocalpb.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libpvasflocalpbreg.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libqcomm_omx.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libscalado_htcalbum.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libscaladoapi.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libscaladoutil.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libsiimpl.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libsorenson.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libspeech.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libt9.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libwsp.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libwsp_jni.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/modules/bcm4329.ko ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/voEVRCDec.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/voEVRCEnc.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/voOMXOne.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/voQCELPDec.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/voQCELPEnc.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/voVidDec.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/de-DE_gl0_sg.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/de-DE_ta.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/en-GB_kh0_sg.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/en-GB_ta.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/en-US_lh0_sg.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/en-US_ta.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/es-ES_ta.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/es-ES_zl0_sg.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/fr-FR_nk0_sg.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/fr-FR_ta.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/it-IT_cm0_sg.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/tts/lang_pico/it-IT_ta.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/usr/keychars/incrediblec-keypad.kcm.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/usr/keylayout/h2w_headset.kl ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/usr/keylayout/incrediblec-keypad.kl ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/xbin/wireless_modem ../../../vendor/htc/$DEVICE/proprietary
 
 
-adb pull /system/lib/libbattd.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libglslcompiler.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libHPImgApi.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libIMGegl.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libinterstitial.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libLCML.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/liblvmxipc.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libmoto_ril.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/liboemcamera.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.AAC.decode.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.AAC.encode.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.AMR.decode.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.AMR.encode.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.JPEG.Encoder.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.MP3.decode.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.Video.Decoder.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.Video.encoder.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.WBAMR.decode.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.WBAMR.encode.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX.TI.WMA.decode.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libOMX_Core.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libopencore_asflocal.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libopencore_asflocalreg.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libpppd_plugin-ril.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libpvr2d.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libpvrANDROID_WSEGL.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libspeech.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libsrv_um.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libVendor_ti_omx.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libVendor_ti_omx_config_parser.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libzxing.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/zxing.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/akmd2 ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/ap_gain.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/battd ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/bthelp ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/chat-ril ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/ftmipcd ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/mdm_panicd ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/pppd-ril ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/pvrsrvinit ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/SaveBPVer ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/bin/tcmd ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/01_Vendor_ti_omx.cfg ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/cameraCalFileDef.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/contributors.css ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/excluded-input-devices.xml ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/firmware/wl1271.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/gps.conf ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/motorola/12m/key_code_map.txt ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/permissions/android.hardware.telephony.cdma.xml ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/permissions/com.google.android.maps.xml ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/permissions/features.xml ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/ppp/peers/pppd-ril.options ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/pvplayer_mot.cfg ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/updatecmds/google_generic_update.txt ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/wifi/fw_wlan1271.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/framework/com.google.android.maps.jar ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/baseimage.dof ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/conversions.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/h264vdec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/h264venc_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/jpegenc_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/m4venc_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/mp3dec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/mp4vdec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/mpeg4aacdec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/mpeg4aacenc_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/nbamrdec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/nbamrenc_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/postprocessor_dualout.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/ringio.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/usn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/wbamrdec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/wbamrenc_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/wmadec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/dsp/wmv9dec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/act_mirred.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/act_police.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/cls_u32.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/em_u32.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/ifb.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/sch_htb.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/sch_ingress.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/wl127x_test.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/de-DE_gl0_sg.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/de-DE_ta.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/en-GB_kh0_sg.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/en-GB_ta.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/en-US_lh0_sg.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/en-US_ta.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/es-ES_ta.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/es-ES_zl0_sg.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/fr-FR_nk0_sg.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/fr-FR_ta.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/it-IT_cm0_sg.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/tts/lang_pico/it-IT_ta.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/usr/keychars/sholes-keypad.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/usr/keylayout/cpcap-key.kl ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/usr/keylayout/sholes-keypad.kl ../../../vendor/motorola/$DEVICE/proprietary
-
-
-(cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/motorola/$DEVICE/$DEVICE-vendor-blobs.mk
+(cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -149,135 +225,206 @@ adb pull /system/usr/keylayout/sholes-keypad.kl ../../../vendor/motorola/$DEVICE
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# This file is generated by device/motorola/__DEVICE__/extract-files.sh
+# This file is generated by device/htc/__DEVICE__/extract-files.sh
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES := \\
-    vendor/motorola/__DEVICE__/proprietary/libmoto_gps.so:obj/lib/libmoto_gps.so \\
-    vendor/motorola/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
-    vendor/motorola/__DEVICE__/proprietary/libaudio.so:obj/lib/libaudio.so \\
-    vendor/motorola/__DEVICE__/proprietary/libaudiopolicy.so:obj/lib/libaudiopolicy.so \\
-    vendor/motorola/__DEVICE__/proprietary/libril_rds.so:obj/lib/libril_rds.so \\
-    vendor/motorola/__DEVICE__/proprietary/libnmea.so:obj/lib/libnmea.so \\
-    vendor/motorola/__DEVICE__/proprietary/gralloc.omap3.so:obj/lib/hw/gralloc.omap3.so \\
-    vendor/motorola/__DEVICE__/proprietary/lights.sholes.so:obj/lib/hw/lights.sholes.so \\
-    vendor/motorola/__DEVICE__/proprietary/sensors.sholes.so:obj/lib/hw/sensors.sholes.so
+    vendor/htc/__DEVICE__/proprietary/libgps.so:obj/lib/libgps.so \\
+    vendor/htc/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so
 
 # All the blobs necessary for passion
 PRODUCT_COPY_FILES += \\
-    vendor/motorola/__DEVICE__/proprietary/libmoto_gps.so:/system/lib/libmoto_gps.so \\
-    vendor/motorola/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
-    vendor/motorola/__DEVICE__/proprietary/libaudio.so:/system/lib/libaudio.so \\
-    vendor/motorola/__DEVICE__/proprietary/libaudiopolicy.so:/system/lib/libaudiopolicy.so \\
-    vendor/motorola/__DEVICE__/proprietary/libril_rds.so:/system/lib/libril_rds.so \\
-    vendor/motorola/__DEVICE__/proprietary/libnmea.so:/system/lib/libnmea.so \\
-    vendor/motorola/__DEVICE__/proprietary/libEGL_POWERVR_SGX530_121.so:/system/lib/egl/libEGL_POWERVR_SGX530_121.so \\
-    vendor/motorola/__DEVICE__/proprietary/libGLESv1_CM_POWERVR_SGX530_121.so:/system/lib/egl/libGLESv1_CM_POWERVR_SGX530_121.so \\
-    vendor/motorola/__DEVICE__/proprietary/libGLESv2_POWERVR_SGX530_121.so:/system/lib/egl/libGLESv2_POWERVR_SGX530_121.so \\
-    vendor/motorola/__DEVICE__/proprietary/gralloc.omap3.so:/system/lib/hw/gralloc.omap3.so \\
-    vendor/motorola/__DEVICE__/proprietary/lights.sholes.so:/system/lib/hw/lights.sholes.so \\
-    vendor/motorola/__DEVICE__/proprietary/sensors.sholes.so:/system/lib/hw/sensors.sholes.so \\
-    vendor/motorola/__DEVICE__/proprietary/libbattd.so:/system/lib/libbattd.so \\
-    vendor/motorola/__DEVICE__/proprietary/libglslcompiler.so:/system/lib/libglslcompiler.so \\
-    vendor/motorola/__DEVICE__/proprietary/libHPImgApi.so:/system/lib/libHPImgApi.so \\
-    vendor/motorola/__DEVICE__/proprietary/libIMGegl.so:/system/lib/libIMGegl.so \\
-    vendor/motorola/__DEVICE__/proprietary/libinterstitial.so:/system/lib/libinterstitial.so \\
-    vendor/motorola/__DEVICE__/proprietary/libLCML.so:/system/lib/libLCML.so \\
-    vendor/motorola/__DEVICE__/proprietary/liblvmxipc.so:/system/lib/liblvmxipc.so \\
-    vendor/motorola/__DEVICE__/proprietary/libmoto_ril.so:/system/lib/libmoto_ril.so \\
-    vendor/motorola/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.AAC.decode.so:/system/lib/libOMX.TI.AAC.decode.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.AAC.encode.so:/system/lib/libOMX.TI.AAC.encode.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.AMR.decode.so:/system/lib/libOMX.TI.AMR.decode.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.AMR.encode.so:/system/lib/libOMX.TI.AMR.encode.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.JPEG.Encoder.so:/system/lib/libOMX.TI.JPEG.Encoder.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.MP3.decode.so:/system/lib/libOMX.TI.MP3.decode.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.Video.Decoder.so:/system/lib/libOMX.TI.Video.Decoder.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.Video.encoder.so:/system/lib/libOMX.TI.Video.encoder.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.WBAMR.decode.so:/system/lib/libOMX.TI.WBAMR.decode.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.WBAMR.encode.so:/system/lib/libOMX.TI.WBAMR.encode.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX.TI.WMA.decode.so:/system/lib/libOMX.TI.WMA.decode.so \\
-    vendor/motorola/__DEVICE__/proprietary/libOMX_Core.so:/system/lib/libOMX_Core.so \\
-    vendor/motorola/__DEVICE__/proprietary/libopencore_asflocal.so:/system/lib/libopencore_asflocal.so \\
-    vendor/motorola/__DEVICE__/proprietary/libopencore_asflocalreg.so:/system/lib/libopencore_asflocalreg.so \\
-    vendor/motorola/__DEVICE__/proprietary/libpppd_plugin-ril.so:/system/lib/libpppd_plugin-ril.so \\
-    vendor/motorola/__DEVICE__/proprietary/libpvr2d.so:/system/lib/libpvr2d.so \\
-    vendor/motorola/__DEVICE__/proprietary/libpvrANDROID_WSEGL.so:/system/lib/libpvrANDROID_WSEGL.so \\
-    vendor/motorola/__DEVICE__/proprietary/libspeech.so:/system/lib/libspeech.so \\
-    vendor/motorola/__DEVICE__/proprietary/libsrv_um.so:/system/lib/libsrv_um.so \\
-    vendor/motorola/__DEVICE__/proprietary/libVendor_ti_omx.so:/system/lib/libVendor_ti_omx.so \\
-    vendor/motorola/__DEVICE__/proprietary/libVendor_ti_omx_config_parser.so:/system/lib/libVendor_ti_omx_config_parser.so \\
-    vendor/motorola/__DEVICE__/proprietary/libzxing.so:/system/lib/libzxing.so \\
-    vendor/motorola/__DEVICE__/proprietary/zxing.so:/system/lib/zxing.so \\
-    vendor/motorola/__DEVICE__/proprietary/akmd2:/system/bin/akmd2 \\
-    vendor/motorola/__DEVICE__/proprietary/ap_gain.bin:/system/bin/ap_gain.bin \\
-    vendor/motorola/__DEVICE__/proprietary/battd:/system/bin/battd \\
-    vendor/motorola/__DEVICE__/proprietary/bthelp:/system/bin/bthelp \\
-    vendor/motorola/__DEVICE__/proprietary/chat-ril:/system/bin/chat-ril \\
-    vendor/motorola/__DEVICE__/proprietary/ftmipcd:/system/bin/ftmipcd \\
-    vendor/motorola/__DEVICE__/proprietary/mdm_panicd:/system/bin/mdm_panicd \\
-    vendor/motorola/__DEVICE__/proprietary/pppd-ril:/system/bin/pppd-ril \\
-    vendor/motorola/__DEVICE__/proprietary/pvrsrvinit:/system/bin/pvrsrvinit \\
-    vendor/motorola/__DEVICE__/proprietary/SaveBPVer:/system/bin/SaveBPVer \\
-    vendor/motorola/__DEVICE__/proprietary/tcmd:/system/bin/tcmd \\
-    vendor/motorola/__DEVICE__/proprietary/01_Vendor_ti_omx.cfg:/system/etc/01_Vendor_ti_omx.cfg \\
-    vendor/motorola/__DEVICE__/proprietary/cameraCalFileDef.bin:/system/etc/cameraCalFileDef.bin \\
-    vendor/motorola/__DEVICE__/proprietary/contributors.css:/system/etc/contributors.css \\
-    vendor/motorola/__DEVICE__/proprietary/excluded-input-devices.xml:/system/etc/excluded-input-devices.xml \\
-    vendor/motorola/__DEVICE__/proprietary/wl1271.bin:/system/etc/firmware/wl1271.bin \\
-    vendor/motorola/__DEVICE__/proprietary/gps.conf:/system/etc/gps.conf \\
-    vendor/motorola/__DEVICE__/proprietary/key_code_map.txt:/system/etc/motorola/12m/key_code_map.txt \\
-    vendor/motorola/__DEVICE__/proprietary/android.hardware.telephony.cdma.xml:/system/etc/permissions/android.hardware.telephony.cdma.xml \\
-    vendor/motorola/__DEVICE__/proprietary/android.hardware.touchscreen.multitouch.distinct.xml:/system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \\
-    vendor/motorola/__DEVICE__/proprietary/com.google.android.maps.xml:/system/etc/permissions/com.google.android.maps.xml \\
-    vendor/motorola/__DEVICE__/proprietary/features.xml:/system/etc/permissions/features.xml \\
-    vendor/motorola/__DEVICE__/proprietary/pppd-ril.options:/system/etc/ppp/peers/pppd-ril.options \\
-    vendor/motorola/__DEVICE__/proprietary/pvplayer_mot.cfg:/system/etc/pvplayer_mot.cfg \\
-    vendor/motorola/__DEVICE__/proprietary/google_generic_update.txt:/system/etc/updatecmds/google_generic_update.txt \\
-    vendor/motorola/__DEVICE__/proprietary/fw_wlan1271.bin:/system/etc/wifi/fw_wlan1271.bin \\
-    vendor/motorola/__DEVICE__/proprietary/com.google.android.maps.jar:/system/framework/com.google.android.maps.jar \\
-    vendor/motorola/__DEVICE__/proprietary/baseimage.dof:/system/lib/dsp/baseimage.dof \\
-    vendor/motorola/__DEVICE__/proprietary/conversions.dll64P:/system/lib/dsp/conversions.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/h264vdec_sn.dll64P:/system/lib/dsp/h264vdec_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/h264venc_sn.dll64P:/system/lib/dsp/h264venc_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/jpegenc_sn.dll64P:/system/lib/dsp/jpegenc_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/m4venc_sn.dll64P:/system/lib/dsp/m4venc_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/mp3dec_sn.dll64P:/system/lib/dsp/mp3dec_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/mp4vdec_sn.dll64P:/system/lib/dsp/mp4vdec_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/mpeg4aacdec_sn.dll64P:/system/lib/dsp/mpeg4aacdec_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/mpeg4aacenc_sn.dll64P:/system/lib/dsp/mpeg4aacenc_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/nbamrdec_sn.dll64P:/system/lib/dsp/nbamrdec_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/nbamrenc_sn.dll64P:/system/lib/dsp/nbamrenc_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/postprocessor_dualout.dll64P:/system/lib/dsp/postprocessor_dualout.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/ringio.dll64P:/system/lib/dsp/ringio.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/usn.dll64P:/system/lib/dsp/usn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/wbamrdec_sn.dll64P:/system/lib/dsp/wbamrdec_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/wbamrenc_sn.dll64P:/system/lib/dsp/wbamrenc_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/wmadec_sn.dll64P:/system/lib/dsp/wmadec_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/wmv9dec_sn.dll64P:/system/lib/dsp/wmv9dec_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/act_mirred.ko:/system/lib/modules/act_mirred.ko \\
-    vendor/motorola/__DEVICE__/proprietary/act_police.ko:/system/lib/modules/act_police.ko \\
-    vendor/motorola/__DEVICE__/proprietary/cls_u32.ko:/system/lib/modules/cls_u32.ko \\
-    vendor/motorola/__DEVICE__/proprietary/em_u32.ko:/system/lib/modules/em_u32.ko \\
-    vendor/motorola/__DEVICE__/proprietary/ifb.ko:/system/lib/modules/ifb.ko \\
-    vendor/motorola/__DEVICE__/proprietary/sch_htb.ko:/system/lib/modules/sch_htb.ko \\
-    vendor/motorola/__DEVICE__/proprietary/sch_ingress.ko:/system/lib/modules/sch_ingress.ko \\
-    vendor/motorola/__DEVICE__/proprietary/wl127x_test.ko:/system/lib/modules/wl127x_test.ko \\
-    vendor/motorola/__DEVICE__/proprietary/de-DE_gl0_sg.bin:/system/tts/lang_pico/de-DE_gl0_sg.bin \\
-    vendor/motorola/__DEVICE__/proprietary/de-DE_ta.bin:/system/tts/lang_pico/de-DE_ta.bin \\
-    vendor/motorola/__DEVICE__/proprietary/en-GB_kh0_sg.bin:/system/tts/lang_pico/en-GB_kh0_sg.bin \\
-    vendor/motorola/__DEVICE__/proprietary/en-GB_ta.bin:/system/tts/lang_pico/en-GB_ta.bin \\
-    vendor/motorola/__DEVICE__/proprietary/en-US_lh0_sg.bin:/system/tts/lang_pico/en-US_lh0_sg.bin \\
-    vendor/motorola/__DEVICE__/proprietary/en-US_ta.bin:/system/tts/lang_pico/en-US_ta.bin \\
-    vendor/motorola/__DEVICE__/proprietary/es-ES_ta.bin:/system/tts/lang_pico/es-ES_ta.bin \\
-    vendor/motorola/__DEVICE__/proprietary/es-ES_zl0_sg.bin:/system/tts/lang_pico/es-ES_zl0_sg.bin \\
-    vendor/motorola/__DEVICE__/proprietary/fr-FR_nk0_sg.bin:/system/tts/lang_pico/fr-FR_nk0_sg.bin \\
-    vendor/motorola/__DEVICE__/proprietary/fr-FR_ta.bin:/system/tts/lang_pico/fr-FR_ta.bin \\
-    vendor/motorola/__DEVICE__/proprietary/it-IT_cm0_sg.bin:/system/tts/lang_pico/it-IT_cm0_sg.bin \\
-    vendor/motorola/__DEVICE__/proprietary/it-IT_ta.bin:/system/tts/lang_pico/it-IT_ta.bin \\
-    vendor/motorola/__DEVICE__/proprietary/sholes-keypad.kcm.bin:/system/usr/keychars/sholes-keypad.kcm.bin \\
-    vendor/motorola/__DEVICE__/proprietary/cpcap-key.kl:/system/usr/keylayout/cpcap-key.kl \\
-    vendor/motorola/__DEVICE__/proprietary/sholes-keypad.kl:/system/usr/keylayout/sholes-keypad.kl
+    vendor/htc/__DEVICE__/proprietary/PPST:/system/bin/PPST \\
+    vendor/htc/__DEVICE__/proprietary/akmd:/system/bin/akmd \\
+    vendor/htc/__DEVICE__/proprietary/aparse:/system/bin/aparse \\
+    vendor/htc/__DEVICE__/proprietary/awb_camera:/system/bin/awb_camera \\
+    vendor/htc/__DEVICE__/proprietary/bma150_usr:/system/bin/bma150_usr \\
+    vendor/htc/__DEVICE__/proprietary/bootcomplete:/system/bin/bootcomplete \\
+    vendor/htc/__DEVICE__/proprietary/btld:/system/bin/btld \\
+    vendor/htc/__DEVICE__/proprietary/cam_ins_spmo:/system/bin/cam_ins_spmo \\
+    vendor/htc/__DEVICE__/proprietary/debug_tool:/system/bin/debug_tool \\
+    vendor/htc/__DEVICE__/proprietary/dmagent:/system/bin/dmagent \\
+    vendor/htc/__DEVICE__/proprietary/e2fsck:/system/bin/e2fsck \\
+    vendor/htc/__DEVICE__/proprietary/e2fsck_recvy:/system/bin/e2fsck_recvy \\
+    vendor/htc/__DEVICE__/proprietary/fbtool:/system/bin/fbtool \\
+    vendor/htc/__DEVICE__/proprietary/htclogkernel:/system/bin/htclogkernel \\
+    vendor/htc/__DEVICE__/proprietary/ip:/system/bin/ip \\
+    vendor/htc/__DEVICE__/proprietary/keypress:/system/bin/keypress \\
+    vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
+    vendor/htc/__DEVICE__/proprietary/mke2fs:/system/bin/mke2fs \\
+    vendor/htc/__DEVICE__/proprietary/mke2fs_recvy:/system/bin/mke2fs_recvy \\
+    vendor/htc/__DEVICE__/proprietary/mm-aenc-omxaac-test:/system/bin/mm-aenc-omxaac-test \\
+    vendor/htc/__DEVICE__/proprietary/mm-aenc-omxqcelp13-test:/system/bin/mm-aenc-omxqcelp13-test \\
+    vendor/htc/__DEVICE__/proprietary/mm-venc-omx-test:/system/bin/mm-venc-omx-test \\
+    vendor/htc/__DEVICE__/proprietary/mmcamera_test:/system/bin/mmcamera_test \\
+    vendor/htc/__DEVICE__/proprietary/monitorMTD:/system/bin/monitorMTD \\
+    vendor/htc/__DEVICE__/proprietary/mscompress:/system/bin/mscompress \\
+    vendor/htc/__DEVICE__/proprietary/netsharing:/system/bin/netsharing \\
+    vendor/htc/__DEVICE__/proprietary/resize2fs:/system/bin/resize2fs \\
+    vendor/htc/__DEVICE__/proprietary/resize2fs_recvy:/system/bin/resize2fs_recvy \\
+    vendor/htc/__DEVICE__/proprietary/rsync:/system/bin/rsync \\
+    vendor/htc/__DEVICE__/proprietary/ser2net:/system/bin/ser2net \\
+    vendor/htc/__DEVICE__/proprietary/setmic:/system/bin/setmic \\
+    vendor/htc/__DEVICE__/proprietary/shutdown:/system/bin/shutdown \\
+    vendor/htc/__DEVICE__/proprietary/snd:/system/bin/snd \\
+    vendor/htc/__DEVICE__/proprietary/snd8k:/system/bin/snd8k \\
+    vendor/htc/__DEVICE__/proprietary/sound8k:/system/bin/sound8k \\
+    vendor/htc/__DEVICE__/proprietary/spkamp:/system/bin/spkamp \\
+    vendor/htc/__DEVICE__/proprietary/tune2fs:/system/bin/tune2fs \\
+    vendor/htc/__DEVICE__/proprietary/udhcpd:/system/bin/udhcpd \\
+    vendor/htc/__DEVICE__/proprietary/uevent:/system/bin/uevent \\
+    vendor/htc/__DEVICE__/proprietary/vptest:/system/bin/vptest \\
+    vendor/htc/__DEVICE__/proprietary/wifitools:/system/bin/wifitools \\
+    vendor/htc/__DEVICE__/proprietary/1_00_sample.xml:/system/customize/1_00_sample.xml \\
+    vendor/htc/__DEVICE__/proprietary/cidProfile1.xml:/system/customize/CID/cidProfile1.xml \\
+    vendor/htc/__DEVICE__/proprietary/cidProfile2.xml:/system/customize/CID/cidProfile2.xml \\
+    vendor/htc/__DEVICE__/proprietary/default.xml:/system/customize/CID/default.xml \\
+    vendor/htc/__DEVICE__/proprietary/COMMON.xml:/system/customize/COMMON.xml \\
+    vendor/htc/__DEVICE__/proprietary/default.xml:/system/customize/MNS/default.xml \\
+    vendor/htc/__DEVICE__/proprietary/cid_map.xml:/system/customize/cid_map.xml \\
+    vendor/htc/__DEVICE__/proprietary/default.xml:/system/customize/default.xml \\
+    vendor/htc/__DEVICE__/proprietary/mccmnc.xml:/system/customize/mccmnc.xml \\
+    vendor/htc/__DEVICE__/proprietary/mns_map.xml:/system/customize/mns_map.xml \\
+    vendor/htc/__DEVICE__/proprietary/CCInfo.txt:/system/customize/resource/CCInfo.txt \\
+    vendor/htc/__DEVICE__/proprietary/HTC_Quietly_Brilliant.gif:/system/customize/resource/HTC_Quietly_Brilliant.gif \\
+    vendor/htc/__DEVICE__/proprietary/VZW.gif:/system/customize/resource/VZW.gif \\
+    vendor/htc/__DEVICE__/proprietary/preInstall.opml:/system/customize/resource/preInstall.opml \\
+    vendor/htc/__DEVICE__/proprietary/preset.kmz:/system/customize/resource/preset.kmz \\
+    vendor/htc/__DEVICE__/proprietary/resource:/system/customize/resource/resource \\
+    vendor/htc/__DEVICE__/proprietary/ringtone_01.wma:/system/customize/resource/ringtone_01.wma \\
+    vendor/htc/__DEVICE__/proprietary/01_qcomm_omx.cfg:/system/etc/01_qcomm_omx.cfg \\
+    vendor/htc/__DEVICE__/proprietary/AdieHWCodecSetting.csv:/system/etc/AdieHWCodecSetting.csv \\
+    vendor/htc/__DEVICE__/proprietary/AudioBTID.csv:/system/etc/AudioBTID.csv \\
+    vendor/htc/__DEVICE__/proprietary/TPA2018.csv:/system/etc/TPA2018.csv \\
+    vendor/htc/__DEVICE__/proprietary/WPDB.zip:/system/etc/WPDB.zip \\
+    vendor/htc/__DEVICE__/proprietary/agps_rm:/system/etc/agps_rm \\
+    vendor/htc/__DEVICE__/proprietary/audio.conf:/system/etc/bluez/audio.conf \\
+    vendor/htc/__DEVICE__/proprietary/input.conf:/system/etc/bluez/input.conf \\
+    vendor/htc/__DEVICE__/proprietary/main.conf:/system/etc/bluez/main.conf \\
+    vendor/htc/__DEVICE__/proprietary/bookmarks.xml:/system/etc/bookmarks.xml \\
+    vendor/htc/__DEVICE__/proprietary/BCM4329B1_002.002.023.0298.0303.hcd:/system/etc/firmware/BCM4329B1_002.002.023.0298.0303.hcd \\
+    vendor/htc/__DEVICE__/proprietary/Incredible_C_20100310_VZW_Neo_324016_v4_PMIC.acdb:/system/etc/firmware/Incredible_C_20100310_VZW_Neo_324016_v4_PMIC.acdb \\
+    vendor/htc/__DEVICE__/proprietary/Incredible_C_20100319_VZW_Neo_324016_v5_VZW.acdb:/system/etc/firmware/Incredible_C_20100319_VZW_Neo_324016_v5_VZW.acdb \\
+    vendor/htc/__DEVICE__/proprietary/Incredible_C_20100319_VZW_Neo_324016_v8_default.acdb:/system/etc/firmware/Incredible_C_20100319_VZW_Neo_324016_v8_default.acdb \\
+    vendor/htc/__DEVICE__/proprietary/default.acdb:/system/etc/firmware/default.acdb \\
+    vendor/htc/__DEVICE__/proprietary/default_PMIC.acdb:/system/etc/firmware/default_PMIC.acdb \\
+    vendor/htc/__DEVICE__/proprietary/default_VZW.acdb:/system/etc/firmware/default_VZW.acdb \\
+    vendor/htc/__DEVICE__/proprietary/fw_bcm4329.bin:/system/etc/firmware/fw_bcm4329.bin \\
+    vendor/htc/__DEVICE__/proprietary/yamato_pfp.fw:/system/etc/firmware/yamato_pfp.fw \\
+    vendor/htc/__DEVICE__/proprietary/yamato_pm4.fw:/system/etc/firmware/yamato_pm4.fw \\
+    vendor/htc/__DEVICE__/proprietary/rt_tables:/system/etc/iproute2/rt_tables \\
+    vendor/htc/__DEVICE__/proprietary/android.hardware.camera.autofocus.xml:/system/etc/permissions/android.hardware.camera.autofocus.xml \\
+    vendor/htc/__DEVICE__/proprietary/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml \\
+    vendor/htc/__DEVICE__/proprietary/com.cequint.platform.xml:/system/etc/permissions/com.cequint.platform.xml \\
+    vendor/htc/__DEVICE__/proprietary/com.google.android.datamessaging.xml:/system/etc/permissions/com.google.android.datamessaging.xml \\
+    vendor/htc/__DEVICE__/proprietary/com.google.android.gtalkservice.xml:/system/etc/permissions/com.google.android.gtalkservice.xml \\
+    vendor/htc/__DEVICE__/proprietary/com.google.android.maps.xml:/system/etc/permissions/com.google.android.maps.xml \\
+    vendor/htc/__DEVICE__/proprietary/com.htc.framework.xml:/system/etc/permissions/com.htc.framework.xml \\
+    vendor/htc/__DEVICE__/proprietary/required_hardware.xml:/system/etc/permissions/required_hardware.xml \\
+    vendor/htc/__DEVICE__/proprietary/pvasflocal.cfg:/system/etc/pvasflocal.cfg \\
+    vendor/htc/__DEVICE__/proprietary/ser2net.conf:/system/etc/ser2net.conf \\
+    vendor/htc/__DEVICE__/proprietary/timezones.db:/system/etc/timezones.db \\
+    vendor/htc/__DEVICE__/proprietary/voVidDec.dat:/system/etc/voVidDec.dat \\
+    vendor/htc/__DEVICE__/proprietary/vo_omx_core.cfg:/system/etc/vo_omx_core.cfg \\
+    vendor/htc/__DEVICE__/proprietary/voicemail-conf.xml:/system/etc/voicemail-conf.xml \\
+    vendor/htc/__DEVICE__/proprietary/vold.conf:/system/etc/vold.conf \\
+    vendor/htc/__DEVICE__/proprietary/vomeOne.cfg:/system/etc/vomeOne.cfg \\
+    vendor/htc/__DEVICE__/proprietary/com.cequint.platform.jar:/system/framework/com.cequint.platform.jar \\
+    vendor/htc/__DEVICE__/proprietary/com.google.android.gtalkservice.jar:/system/framework/com.google.android.gtalkservice.jar \\
+    vendor/htc/__DEVICE__/proprietary/com.google.android.maps.jar:/system/framework/com.google.android.maps.jar \\
+    vendor/htc/__DEVICE__/proprietary/com.htc.android.easopen.jar:/system/framework/com.htc.android.easopen.jar \\
+    vendor/htc/__DEVICE__/proprietary/com.htc.android.pimlib.jar:/system/framework/com.htc.android.pimlib.jar \\
+    vendor/htc/__DEVICE__/proprietary/com.htc.framework.jar:/system/framework/com.htc.framework.jar \\
+    vendor/htc/__DEVICE__/proprietary/com.scalado.util.ScaladoUtil.jar:/system/framework/com.scalado.util.ScaladoUtil.jar \\
+    vendor/htc/__DEVICE__/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \\
+    vendor/htc/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
+    vendor/htc/__DEVICE__/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
+    vendor/htc/__DEVICE__/proprietary/sensors.inc.so:/system/lib/hw/sensors.inc.so \\
+    vendor/htc/__DEVICE__/proprietary/libAudioTrimmer.so:/system/lib/libAudioTrimmer.so \\
+    vendor/htc/__DEVICE__/proprietary/libDMCmd.so:/system/lib/libDMCmd.so \\
+    vendor/htc/__DEVICE__/proprietary/libObexJniWrapper.so:/system/lib/libObexJniWrapper.so \\
+    vendor/htc/__DEVICE__/proprietary/libOlaBase.so:/system/lib/libOlaBase.so \\
+    vendor/htc/__DEVICE__/proprietary/libOmxAacEnc.so:/system/lib/libOmxAacEnc.so \\
+    vendor/htc/__DEVICE__/proprietary/libOmxCore.so:/system/lib/libOmxCore.so \\
+    vendor/htc/__DEVICE__/proprietary/libOmxQcelp13Enc.so:/system/lib/libOmxQcelp13Enc.so \\
+    vendor/htc/__DEVICE__/proprietary/libOmxVdec.so:/system/lib/libOmxVdec.so \\
+    vendor/htc/__DEVICE__/proprietary/libOmxVidEnc.so:/system/lib/libOmxVidEnc.so \\
+    vendor/htc/__DEVICE__/proprietary/libTVOUT.so:/system/lib/libTVOUT.so \\
+    vendor/htc/__DEVICE__/proprietary/libaes.so:/system/lib/libaes.so \\
+    vendor/htc/__DEVICE__/proprietary/libalbum_util.so:/system/lib/libalbum_util.so \\
+    vendor/htc/__DEVICE__/proprietary/libaudiopolicygeneric.so:/system/lib/libaudiopolicygeneric.so \\
+    vendor/htc/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
+    vendor/htc/__DEVICE__/proprietary/libchecksum.so:/system/lib/libchecksum.so \\
+    vendor/htc/__DEVICE__/proprietary/libcurl.so:/system/lib/libcurl.so \\
+    vendor/htc/__DEVICE__/proprietary/libdm.so:/system/lib/libdm.so \\
+    vendor/htc/__DEVICE__/proprietary/libext2_blkid.so:/system/lib/libext2_blkid.so \\
+    vendor/htc/__DEVICE__/proprietary/libext2_com_err.so:/system/lib/libext2_com_err.so \\
+    vendor/htc/__DEVICE__/proprietary/libext2_e2p.so:/system/lib/libext2_e2p.so \\
+    vendor/htc/__DEVICE__/proprietary/libext2_profile.so:/system/lib/libext2_profile.so \\
+    vendor/htc/__DEVICE__/proprietary/libext2_uuid.so:/system/lib/libext2_uuid.so \\
+    vendor/htc/__DEVICE__/proprietary/libext2fs.so:/system/lib/libext2fs.so \\
+    vendor/htc/__DEVICE__/proprietary/libflashlite.so:/system/lib/libflashlite.so \\
+    vendor/htc/__DEVICE__/proprietary/libflashsnddec.so:/system/lib/libflashsnddec.so \\
+    vendor/htc/__DEVICE__/proprietary/libflsaplayerlib.so:/system/lib/libflsaplayerlib.so \\
+    vendor/htc/__DEVICE__/proprietary/libgps.so:/system/lib/libgps.so \\
+    vendor/htc/__DEVICE__/proprietary/libgsl.so:/system/lib/libgsl.so \\
+    vendor/htc/__DEVICE__/proprietary/libgtalk_jni.so:/system/lib/libgtalk_jni.so \\
+    vendor/htc/__DEVICE__/proprietary/libhtc_acoustic.so:/system/lib/libhtc_acoustic.so \\
+    vendor/htc/__DEVICE__/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \\
+    vendor/htc/__DEVICE__/proprietary/libhtcbitmapfactory.so:/system/lib/libhtcbitmapfactory.so \\
+    vendor/htc/__DEVICE__/proprietary/libiconv.so:/system/lib/libiconv.so \\
+    vendor/htc/__DEVICE__/proprietary/libicule.so:/system/lib/libicule.so \\
+    vendor/htc/__DEVICE__/proprietary/libiculx.so:/system/lib/libiculx.so \\
+    vendor/htc/__DEVICE__/proprietary/libmm-omxcore.so:/system/lib/libmm-omxcore.so \\
+    vendor/htc/__DEVICE__/proprietary/libmode10.so:/system/lib/libmode10.so \\
+    vendor/htc/__DEVICE__/proprietary/libmode10Graphics.so:/system/lib/libmode10Graphics.so \\
+    vendor/htc/__DEVICE__/proprietary/libmode10_wallpapers.so:/system/lib/libmode10_wallpapers.so \\
+    vendor/htc/__DEVICE__/proprietary/libmscompress.so:/system/lib/libmscompress.so \\
+    vendor/htc/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
+    vendor/htc/__DEVICE__/proprietary/libomx_vo_omx_core.so:/system/lib/libomx_vo_omx_core.so \\
+    vendor/htc/__DEVICE__/proprietary/libomx_wmadec_sharedlibrary.so:/system/lib/libomx_wmadec_sharedlibrary.so \\
+    vendor/htc/__DEVICE__/proprietary/libomx_wmvdec_sharedlibrary.so:/system/lib/libomx_wmvdec_sharedlibrary.so \\
+    vendor/htc/__DEVICE__/proprietary/libon2.so:/system/lib/libon2.so \\
+    vendor/htc/__DEVICE__/proprietary/libopencorehw.so:/system/lib/libopencorehw.so \\
+    vendor/htc/__DEVICE__/proprietary/libopenobex.so:/system/lib/libopenobex.so \\
+    vendor/htc/__DEVICE__/proprietary/libpdfreader.so:/system/lib/libpdfreader.so \\
+    vendor/htc/__DEVICE__/proprietary/libpvasfcommon.so:/system/lib/libpvasfcommon.so \\
+    vendor/htc/__DEVICE__/proprietary/libpvasflocalpb.so:/system/lib/libpvasflocalpb.so \\
+    vendor/htc/__DEVICE__/proprietary/libpvasflocalpbreg.so:/system/lib/libpvasflocalpbreg.so \\
+    vendor/htc/__DEVICE__/proprietary/libqcomm_omx.so:/system/lib/libqcomm_omx.so \\
+    vendor/htc/__DEVICE__/proprietary/libscalado_htcalbum.so:/system/lib/libscalado_htcalbum.so \\
+    vendor/htc/__DEVICE__/proprietary/libscaladoapi.so:/system/lib/libscaladoapi.so \\
+    vendor/htc/__DEVICE__/proprietary/libscaladoutil.so:/system/lib/libscaladoutil.so \\
+    vendor/htc/__DEVICE__/proprietary/libsiimpl.so:/system/lib/libsiimpl.so \\
+    vendor/htc/__DEVICE__/proprietary/libsorenson.so:/system/lib/libsorenson.so \\
+    vendor/htc/__DEVICE__/proprietary/libspeech.so:/system/lib/libspeech.so \\
+    vendor/htc/__DEVICE__/proprietary/libt9.so:/system/lib/libt9.so \\
+    vendor/htc/__DEVICE__/proprietary/libwsp.so:/system/lib/libwsp.so \\
+    vendor/htc/__DEVICE__/proprietary/libwsp_jni.so:/system/lib/libwsp_jni.so \\
+    vendor/htc/__DEVICE__/proprietary/bcm4329.ko:/system/lib/modules/bcm4329.ko \\
+    vendor/htc/__DEVICE__/proprietary/voEVRCDec.so:/system/lib/voEVRCDec.so \\
+    vendor/htc/__DEVICE__/proprietary/voEVRCEnc.so:/system/lib/voEVRCEnc.so \\
+    vendor/htc/__DEVICE__/proprietary/voOMXOne.so:/system/lib/voOMXOne.so \\
+    vendor/htc/__DEVICE__/proprietary/voQCELPDec.so:/system/lib/voQCELPDec.so \\
+    vendor/htc/__DEVICE__/proprietary/voQCELPEnc.so:/system/lib/voQCELPEnc.so \\
+    vendor/htc/__DEVICE__/proprietary/voVidDec.so:/system/lib/voVidDec.so \\
+    vendor/htc/__DEVICE__/proprietary/de-DE_gl0_sg.bin:/system/tts/lang_pico/de-DE_gl0_sg.bin \\
+    vendor/htc/__DEVICE__/proprietary/de-DE_ta.bin:/system/tts/lang_pico/de-DE_ta.bin \\
+    vendor/htc/__DEVICE__/proprietary/en-GB_kh0_sg.bin:/system/tts/lang_pico/en-GB_kh0_sg.bin \\
+    vendor/htc/__DEVICE__/proprietary/en-GB_ta.bin:/system/tts/lang_pico/en-GB_ta.bin \\
+    vendor/htc/__DEVICE__/proprietary/en-US_lh0_sg.bin:/system/tts/lang_pico/en-US_lh0_sg.bin \\
+    vendor/htc/__DEVICE__/proprietary/en-US_ta.bin:/system/tts/lang_pico/en-US_ta.bin \\
+    vendor/htc/__DEVICE__/proprietary/es-ES_ta.bin:/system/tts/lang_pico/es-ES_ta.bin \\
+    vendor/htc/__DEVICE__/proprietary/es-ES_zl0_sg.bin:/system/tts/lang_pico/es-ES_zl0_sg.bin \\
+    vendor/htc/__DEVICE__/proprietary/fr-FR_nk0_sg.bin:/system/tts/lang_pico/fr-FR_nk0_sg.bin \\
+    vendor/htc/__DEVICE__/proprietary/fr-FR_ta.bin:/system/tts/lang_pico/fr-FR_ta.bin \\
+    vendor/htc/__DEVICE__/proprietary/it-IT_cm0_sg.bin:/system/tts/lang_pico/it-IT_cm0_sg.bin \\
+    vendor/htc/__DEVICE__/proprietary/it-IT_ta.bin:/system/tts/lang_pico/it-IT_ta.bin \\
+    vendor/htc/__DEVICE__/proprietary/incrediblec-keypad.kcm.bin:/system/usr/keychars/incrediblec-keypad.kcm.bin \\
+    vendor/htc/__DEVICE__/proprietary/h2w_headset.kl:/system/usr/keylayout/h2w_headset.kl \\
+    vendor/htc/__DEVICE__/proprietary/incrediblec-keypad.kl:/system/usr/keylayout/incrediblec-keypad.kl \\
+    vendor/htc/__DEVICE__/proprietary/wireless_modem:/system/xbin/wireless_modem
+
 
 
 EOF

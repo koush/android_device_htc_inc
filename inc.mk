@@ -27,10 +27,10 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
 PRODUCT_COPY_FILES += \
-    device/motorola/sholes/init.sholes.rc:root/init.sholes.rc
+    device/htc/inc/init.inc.rc:root/init.inc.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
-$(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/inc/inc-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -49,13 +49,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.cdma.otaspnumschema=SELC,1,80,99 \
 	ro.telephony.call_ring.multiple=false \
 	ro.telephony.call_ring.delay=3000 \
-	ro.url.safetylegal=http://www.motorola.com/staticfiles/Support/legal/?model=A855 \
+	ro.url.safetylegal=http://www.htc.com/staticfiles/Support/legal/?model=A855 \
 	ro.setupwizard.enable_bypass=1 \
 	ro.media.dec.jpeg.memcap=20000000 \
 	dalvik.vm.lockprof.threshold=500 \
 	dalvik.vm.dexopt-flags=m=y
 
-DEVICE_PACKAGE_OVERLAYS += device/motorola/sholes/overlay
+DEVICE_PACKAGE_OVERLAYS += device/htc/inc/overlay
 
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -69,7 +69,7 @@ PRODUCT_COPY_FILES += \
 
 # media config xml file
 PRODUCT_COPY_FILES += \
-    device/motorola/sholes/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/inc/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
     librs_jni
@@ -81,18 +81,13 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES += hdpi
 
 PRODUCT_COPY_FILES += \
-    device/motorola/sholes/vold.fstab:system/etc/vold.fstab\
-    device/motorola/sholes/apns-conf.xml:system/etc/apns-conf.xml
-
+    device/htc/inc/vold.fstab:system/etc/vold.fstab
 
 PRODUCT_COPY_FILES += \
-    device/motorola/sholes/tiwlan_drv.ko:system/lib/modules/tiwlan_drv.ko
-
-PRODUCT_COPY_FILES += \
-    device/motorola/sholes/init.rc:$(TARGET_ROOT_OUT)/root/init.rc
+    device/htc/inc/init.rc:$(TARGET_ROOT_OUT)/root/init.rc
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/motorola/sholes/kernel
+LOCAL_KERNEL := device/htc/inc/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -100,16 +95,16 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-$(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/inc/inc-vendor.mk)
 
 # media profiles and capabilities spec
-# $(call inherit-product, device/motorola/sholes/media_a1026.mk)
+$(call inherit-product, device/htc/inc/media_a1026.mk)
 
 # stuff common to all HTC phones
-#$(call inherit-product, device/htc/common/common.mk)
+$(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, build/target/product/generic.mk)
 
 
-PRODUCT_NAME := generic_sholes
-PRODUCT_DEVICE := sholes
+PRODUCT_NAME := generic_inc
+PRODUCT_DEVICE := inc
