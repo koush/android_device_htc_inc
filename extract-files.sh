@@ -97,14 +97,6 @@ adb pull /system/etc/firmware/fw_bcm4329.bin ../../../vendor/htc/$DEVICE/proprie
 adb pull /system/etc/firmware/yamato_pfp.fw ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/yamato_pm4.fw ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/iproute2/rt_tables ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/permissions/android.hardware.camera.autofocus.xml ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/permissions/android.software.live_wallpaper.xml ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/permissions/com.cequint.platform.xml ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/permissions/com.google.android.datamessaging.xml ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/permissions/com.google.android.gtalkservice.xml ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/permissions/com.google.android.maps.xml ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/permissions/com.htc.framework.xml ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/permissions/required_hardware.xml ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/pvasflocal.cfg ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/ser2net.conf ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/timezones.db ../../../vendor/htc/$DEVICE/proprietary
@@ -113,13 +105,6 @@ adb pull /system/etc/vo_omx_core.cfg ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/voicemail-conf.xml ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/vold.conf ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/vomeOne.cfg ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/framework/com.cequint.platform.jar ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/framework/com.google.android.gtalkservice.jar ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/framework/com.google.android.maps.jar ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/framework/com.htc.android.easopen.jar ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/framework/com.htc.android.pimlib.jar ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/framework/com.htc.framework.jar ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/framework/com.scalado.util.ScaladoUtil.jar ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
@@ -313,14 +298,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/yamato_pfp.fw:/system/etc/firmware/yamato_pfp.fw \\
     vendor/htc/__DEVICE__/proprietary/yamato_pm4.fw:/system/etc/firmware/yamato_pm4.fw \\
     vendor/htc/__DEVICE__/proprietary/rt_tables:/system/etc/iproute2/rt_tables \\
-    vendor/htc/__DEVICE__/proprietary/android.hardware.camera.autofocus.xml:/system/etc/permissions/android.hardware.camera.autofocus.xml \\
-    vendor/htc/__DEVICE__/proprietary/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml \\
-    vendor/htc/__DEVICE__/proprietary/com.cequint.platform.xml:/system/etc/permissions/com.cequint.platform.xml \\
-    vendor/htc/__DEVICE__/proprietary/com.google.android.datamessaging.xml:/system/etc/permissions/com.google.android.datamessaging.xml \\
-    vendor/htc/__DEVICE__/proprietary/com.google.android.gtalkservice.xml:/system/etc/permissions/com.google.android.gtalkservice.xml \\
-    vendor/htc/__DEVICE__/proprietary/com.google.android.maps.xml:/system/etc/permissions/com.google.android.maps.xml \\
-    vendor/htc/__DEVICE__/proprietary/com.htc.framework.xml:/system/etc/permissions/com.htc.framework.xml \\
-    vendor/htc/__DEVICE__/proprietary/required_hardware.xml:/system/etc/permissions/required_hardware.xml \\
     vendor/htc/__DEVICE__/proprietary/pvasflocal.cfg:/system/etc/pvasflocal.cfg \\
     vendor/htc/__DEVICE__/proprietary/ser2net.conf:/system/etc/ser2net.conf \\
     vendor/htc/__DEVICE__/proprietary/timezones.db:/system/etc/timezones.db \\
@@ -329,16 +306,10 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/voicemail-conf.xml:/system/etc/voicemail-conf.xml \\
     vendor/htc/__DEVICE__/proprietary/vold.conf:/system/etc/vold.conf \\
     vendor/htc/__DEVICE__/proprietary/vomeOne.cfg:/system/etc/vomeOne.cfg \\
-    vendor/htc/__DEVICE__/proprietary/com.cequint.platform.jar:/system/framework/com.cequint.platform.jar \\
-    vendor/htc/__DEVICE__/proprietary/com.google.android.gtalkservice.jar:/system/framework/com.google.android.gtalkservice.jar \\
-    vendor/htc/__DEVICE__/proprietary/com.google.android.maps.jar:/system/framework/com.google.android.maps.jar \\
-    vendor/htc/__DEVICE__/proprietary/com.htc.android.easopen.jar:/system/framework/com.htc.android.easopen.jar \\
-    vendor/htc/__DEVICE__/proprietary/com.htc.android.pimlib.jar:/system/framework/com.htc.android.pimlib.jar \\
-    vendor/htc/__DEVICE__/proprietary/com.htc.framework.jar:/system/framework/com.htc.framework.jar \\
-    vendor/htc/__DEVICE__/proprietary/com.scalado.util.ScaladoUtil.jar:/system/framework/com.scalado.util.ScaladoUtil.jar \\
     vendor/htc/__DEVICE__/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
+    vendor/htc/__DEVICE__/proprietary/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/sensors.inc.so:/system/lib/hw/sensors.inc.so \\
     vendor/htc/__DEVICE__/proprietary/libAudioTrimmer.so:/system/lib/libAudioTrimmer.so \\
     vendor/htc/__DEVICE__/proprietary/libDMCmd.so:/system/lib/libDMCmd.so \\

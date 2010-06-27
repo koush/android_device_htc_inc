@@ -6,7 +6,7 @@ on init
     # START from umount/re-mount data
     #
     umount /data
-    mount yaffs2:ext3 sel?mtd@userdata:mmcblk0p1 /data nosuid noatime nodiratime
+    mount ext3 /dev/block/mmcblk0p1 /data nosuid noatime nodiratime
     exec /system/bin/e2fsck -p /dev/block/mmcblk0p1
     chown system system /data
     chmod 0771 /data
@@ -87,7 +87,7 @@ on init
     # START umount/re-mount cache
     #
     umount /cache
-    mount yaffs2:ext3 sel?mtd@cache:mmcblk0p2 /cache nosuid nodev noatime nodiratime
+    mount ext3 /dev/block/mmcblk0p2 /cache nosuid noatime nodiratime
     chown system cache /cache
     chmod 0770 /cache
 
