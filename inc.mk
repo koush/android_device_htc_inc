@@ -81,7 +81,8 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES += hdpi
 
 PRODUCT_COPY_FILES += \
-    device/htc/inc/vold.fstab:system/etc/vold.fstab
+    device/htc/inc/vold.fstab:system/etc/vold.fstab \
+    device/htc/inc/apns-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_COPY_FILES += \
     device/htc/inc/init.rc:$(TARGET_ROOT_OUT)/root/init.rc
