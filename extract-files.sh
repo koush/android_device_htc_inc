@@ -220,7 +220,7 @@ PRODUCT_COPY_FILES := \\
     vendor/htc/__DEVICE__/proprietary/gralloc.qsd8k.so:obj/lib/hw/gralloc.qsd8k.so
 
 # Prebuilt libraries that are needed to build open-source libraries
-PRODUCT_COPY_FILES := \\
+PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libgps.so:obj/lib/libgps.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so
 
