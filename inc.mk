@@ -84,9 +84,6 @@ PRODUCT_COPY_FILES += \
     device/htc/inc/vold.fstab:system/etc/vold.fstab \
     device/htc/inc/apns-conf.xml:system/etc/apns-conf.xml
 
-PRODUCT_COPY_FILES += \
-    device/htc/inc/init.rc:$(TARGET_ROOT_OUT)/root/init.rc
-
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/inc/kernel
 else
@@ -104,7 +101,7 @@ $(call inherit-product, device/htc/inc/media_a1026.mk)
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/generic.mk)
+$(call inherit-product, build/target/product/full.mk)
 
 
 PRODUCT_NAME := generic_inc

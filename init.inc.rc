@@ -43,7 +43,6 @@ on init
     mkdir /data/data 0771 system system
     mkdir /data/app-private 0771 system system
     mkdir /data/app 0771 system system
-    chmod 0771 /data/app
     mkdir /data/property 0700 root root
     # DRMv1 rights storage
     symlink /data/local /data/drm
@@ -82,25 +81,30 @@ on init
     mount yaffs2 mtd@datadata /data/data nosuid nodev
     chown system system /data/data
     chmod 0771 /data/data
-
+    
+    
     #
     # START umount/re-mount cache
     #
     umount /cache
-    mount ext3 /dev/block/mmcblk0p2 /cache nosuid noatime nodiratime
+    mount ext3 /dev/block/mmcblk0p2 /cache nosuid nodev noatime nodiratime
     chown system cache /cache
-    chmod 0770 /cache
+    chmod 0771 /cache
 
     # This may have been created by the recovery system with odd permissions
+    mkdir system system /cache/recovery
     chown system system /cache/recovery
     chmod 0770 /cache/recovery
     mkdir /cache/lost+found 0770
     chown root root /cache/lost+found
     chmod 0770 /cache/lost+found
+    mkdir /cache/dalvik-cache 0771 system system
+    chown system system /cache/dalvik-cache
+    chmod 0771 /cache/dalvik-cache
     #
-    # END umount/re-mount data
+    # END umount/re-mount cache
     #
-
+    
 on boot
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
