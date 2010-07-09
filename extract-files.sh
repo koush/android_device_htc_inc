@@ -106,7 +106,6 @@ adb pull /system/etc/timezones.db ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/voVidDec.dat ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/vo_omx_core.cfg ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/voicemail-conf.xml ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/vold.conf ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/vomeOne.cfg ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
@@ -217,7 +216,7 @@ adb pull /system/xbin/wireless_modem ../../../vendor/htc/$DEVICE/proprietary
 
 # This needs to be removed once .32 kernel is ported.
 PRODUCT_COPY_FILES := \\
-    vendor/htc/__DEVICE__/proprietary/gralloc.qsd8k.so:obj/lib/hw/gralloc.qsd8k.so
+    vendor/htc/__DEVICE__/proprietary/gralloc.qsd8k.so:/system/lib/hw/gralloc.qsd8k.so
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \\
@@ -311,7 +310,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/voVidDec.dat:/system/etc/voVidDec.dat \\
     vendor/htc/__DEVICE__/proprietary/vo_omx_core.cfg:/system/etc/vo_omx_core.cfg \\
     vendor/htc/__DEVICE__/proprietary/voicemail-conf.xml:/system/etc/voicemail-conf.xml \\
-    vendor/htc/__DEVICE__/proprietary/vold.conf:/system/etc/vold.conf \\
     vendor/htc/__DEVICE__/proprietary/vomeOne.cfg:/system/etc/vomeOne.cfg \\
     vendor/htc/__DEVICE__/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
