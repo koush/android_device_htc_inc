@@ -71,6 +71,19 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/inc/media_profiles.xml:system/etc/media_profiles.xml
 
+# Firmware
+PRODUCT_COPY_FILES += \
+    device/htc/inc/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
+    device/htc/inc/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
+    device/htc/inc/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
+
+PRODUCT_COPY_FILES += \
+    device/htc/inc/vold.fstab:system/etc/vold.fstab \
+    device/htc/inc/apns-conf.xml:system/etc/apns-conf.xml
+
+PRODUCT_COPY_FILES += \
+    device/htc/inc/bcm4329.ko:system/lib/modules/bcm4329.ko
+
 PRODUCT_PACKAGES += \
     librs_jni
 
@@ -79,10 +92,6 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Passion uses high-density artwork where available
 PRODUCT_LOCALES += hdpi
-
-PRODUCT_COPY_FILES += \
-    device/htc/inc/vold.fstab:system/etc/vold.fstab \
-    device/htc/inc/apns-conf.xml:system/etc/apns-conf.xml
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/inc/kernel
