@@ -123,7 +123,6 @@ adb pull /system/lib/libDMCmd.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libObexJniWrapper.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOlaBase.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxAacEnc.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libOmxCore.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxQcelp13Enc.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVidEnc.so ../../../vendor/htc/$DEVICE/proprietary
@@ -153,7 +152,6 @@ adb pull /system/lib/libhtcbitmapfactory.so ../../../vendor/htc/$DEVICE/propriet
 adb pull /system/lib/libiconv.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libicule.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libiculx.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libmm-omxcore.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmode10.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmode10Graphics.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmode10_wallpapers.so ../../../vendor/htc/$DEVICE/proprietary
@@ -303,7 +301,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/TPA2018.csv:/system/etc/TPA2018.csv \\
     vendor/htc/__DEVICE__/proprietary/WPDB.zip:/system/etc/WPDB.zip \\
     vendor/htc/__DEVICE__/proprietary/agps_rm:/system/etc/agps_rm \\
-    vendor/htc/__DEVICE__/proprietary/gps.conf:/system/etc/gps.conf \\
     vendor/htc/__DEVICE__/proprietary/audio.conf:/system/etc/bluez/audio.conf \\
     vendor/htc/__DEVICE__/proprietary/input.conf:/system/etc/bluez/input.conf \\
     vendor/htc/__DEVICE__/proprietary/main.conf:/system/etc/bluez/main.conf \\
@@ -334,7 +331,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libObexJniWrapper.so:/system/lib/libObexJniWrapper.so \\
     vendor/htc/__DEVICE__/proprietary/libOlaBase.so:/system/lib/libOlaBase.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxAacEnc.so:/system/lib/libOmxAacEnc.so \\
-    vendor/htc/__DEVICE__/proprietary/libOmxCore.so:/system/lib/libOmxCore.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxQcelp13Enc.so:/system/lib/libOmxQcelp13Enc.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxVdec.so:/system/lib/libOmxVdec.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxVidEnc.so:/system/lib/libOmxVidEnc.so \\
@@ -364,7 +360,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libiconv.so:/system/lib/libiconv.so \\
     vendor/htc/__DEVICE__/proprietary/libicule.so:/system/lib/libicule.so \\
     vendor/htc/__DEVICE__/proprietary/libiculx.so:/system/lib/libiculx.so \\
-    vendor/htc/__DEVICE__/proprietary/libmm-omxcore.so:/system/lib/libmm-omxcore.so \\
     vendor/htc/__DEVICE__/proprietary/libmode10.so:/system/lib/libmode10.so \\
     vendor/htc/__DEVICE__/proprietary/libmode10Graphics.so:/system/lib/libmode10Graphics.so \\
     vendor/htc/__DEVICE__/proprietary/libmode10_wallpapers.so:/system/lib/libmode10_wallpapers.so \\
