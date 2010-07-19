@@ -226,10 +226,10 @@ adb pull /system/xbin/wireless_modem ../../../vendor/htc/$DEVICE/proprietary
 #    vendor/htc/__DEVICE__/proprietary/gralloc.qsd8k.so:/system/lib/hw/gralloc.qsd8k.so
 
 # Bluetooth hacks
-PRODUCT_COPY_FILES := \\
-    vendor/htc/__DEVICE__/proprietary/libbluetooth.so:/system/lib/libbluetooth.so \\
-    vendor/htc/__DEVICE__/proprietary/libbluetoothd.so:/system/lib/libbluetoothd.so \\
-    vendor/htc/__DEVICE__/proprietary/libbluedroid.so:/system/lib/libbluedroid.so
+#PRODUCT_COPY_FILES := \\
+#    vendor/htc/__DEVICE__/proprietary/libbluetooth.so:/system/lib/libbluetooth.so \\
+#    vendor/htc/__DEVICE__/proprietary/libbluetoothd.so:/system/lib/libbluetoothd.so \\
+#    vendor/htc/__DEVICE__/proprietary/libbluedroid.so:/system/lib/libbluedroid.so
 
 
 # Prebuilt libraries that are needed to build open-source libraries
