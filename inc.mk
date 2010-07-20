@@ -85,6 +85,8 @@ PRODUCT_COPY_FILES += \
     device/htc/inc/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 PRODUCT_PACKAGES += \
+    sensors.inc \
+    lights.inc \
     librs_jni
 
 # we have enough storage space to hold precise GC data
