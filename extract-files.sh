@@ -29,7 +29,7 @@ adb pull /system/etc/AudioBTID.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/TPA2018.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/WPDB.zip ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/agps_rm ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/BCM4329B1_002.002.023.0298.0303.hcd ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/BCM4329B1_002.002.023.0436.0439.hcd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/Incredible_C_20100310_VZW_Neo_324016_v4_PMIC.acdb ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/Incredible_C_20100319_VZW_Neo_324016_v5_VZW.acdb ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/Incredible_C_20100319_VZW_Neo_324016_v8_default.acdb ../../../vendor/htc/$DEVICE/proprietary
@@ -98,7 +98,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/TPA2018.csv:/system/etc/TPA2018.csv \\
     vendor/htc/__DEVICE__/proprietary/WPDB.zip:/system/etc/WPDB.zip \\
     vendor/htc/__DEVICE__/proprietary/agps_rm:/system/etc/agps_rm \\
-    vendor/htc/__DEVICE__/proprietary/BCM4329B1_002.002.023.0298.0303.hcd:/system/etc/firmware/BCM4329B1_002.002.023.0298.0303.hcd \\
+    vendor/htc/__DEVICE__/proprietary/BCM4329B1_002.002.023.0436.0439.hcd:/system/etc/firmware/BCM4329B1_002.002.023.0436.0439.hcd \\
     vendor/htc/__DEVICE__/proprietary/Incredible_C_20100310_VZW_Neo_324016_v4_PMIC.acdb:/system/etc/firmware/Incredible_C_20100310_VZW_Neo_324016_v4_PMIC.acdb \\
     vendor/htc/__DEVICE__/proprietary/Incredible_C_20100319_VZW_Neo_324016_v5_VZW.acdb:/system/etc/firmware/Incredible_C_20100319_VZW_Neo_324016_v5_VZW.acdb \\
     vendor/htc/__DEVICE__/proprietary/Incredible_C_20100319_VZW_Neo_324016_v8_default.acdb:/system/etc/firmware/Incredible_C_20100319_VZW_Neo_324016_v8_default.acdb \\

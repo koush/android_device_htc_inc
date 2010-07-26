@@ -22,7 +22,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+$(call inherit-product, device/common/gps/gps_us.mk)
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
@@ -79,7 +79,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/inc/vold.fstab:system/etc/vold.fstab \
-    device/htc/inc/gps.conf:system/etc/gps.conf \
     device/htc/inc/apns-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_COPY_FILES += \
