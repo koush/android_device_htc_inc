@@ -18,8 +18,6 @@ DEVICE=inc
 
 mkdir -p ../../../vendor/htc/$DEVICE/proprietary
 
-adb pull /system/lib/hw/gralloc.qsd8k.so ../../../vendor/htc/$DEVICE/proprietary
-
 adb pull /system/bin/akmd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/snd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/snd8k ../../../vendor/htc/$DEVICE/proprietary
@@ -86,9 +84,6 @@ adb pull /system/usr/keylayout/incrediblec-keypad.kl ../../../vendor/htc/$DEVICE
 PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libgps.so:obj/lib/libgps.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so
-
-#PRODUCT_COPY_FILES += \\
-#    vendor/htc/__DEVICE__/proprietary/gralloc.qsd8k.so:/system/lib/hw/gralloc.qsd8k.so
 
 # All the blobs necessary for passion
 PRODUCT_COPY_FILES += \\
