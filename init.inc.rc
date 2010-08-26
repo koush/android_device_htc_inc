@@ -36,6 +36,10 @@ on init
     chown root log /data/dontpanic/apanic_threads
     chmod 0640 /data/dontpanic/apanic_threads
 
+    write /proc/sys/kernel/sched_latency_ns 5000000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 100000
+    write /proc/sys/kernel/sched_min_granularity_ns 100000
+
 # create basic filesystem structure
     mkdir /data/misc 01771 system misc
     mkdir /data/misc/bluetoothd 0770 bluetooth bluetooth
