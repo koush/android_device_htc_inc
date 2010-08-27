@@ -87,3 +87,5 @@ ro.HorizontalBUA = true
 
 #Recognize different PRL and PCB ID to load different acoustic ACDB for Incredible_C
 ro.ril.enable.prl.recognition = 1
+
+ro.additionalmounts=/mnt/emmc
